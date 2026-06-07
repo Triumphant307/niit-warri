@@ -8,15 +8,12 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    // 1. Run the side-effect based on state
     if (isOpen) {
       document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = ""; // Revert to stylesheet default
+      document.body.style.overflow = "";
     }
 
-    // 2. The Cleanup Function
-    // This runs automatically if the component unmounts, ensuring the lock is ALWAYS released.
     return () => {
       document.body.style.overflow = "";
     };
@@ -34,14 +31,12 @@ export default function Header() {
         </Link>
       </div>
 
-      {/* Hamburger Icon */}
       <div className={styles.hamburger} onClick={toggleMenu}>
         <span className={`${styles.bar} ${isOpen ? styles.open : ""}`}></span>
         <span className={`${styles.bar} ${isOpen ? styles.open : ""}`}></span>
         <span className={`${styles.bar} ${isOpen ? styles.open : ""}`}></span>
       </div>
 
-      {/* Navigation Links */}
       <nav className={`${styles.nav} ${isOpen ? styles.navOpen : ""}`}>
         <Link href="/courses" className={styles.navLink} onClick={toggleMenu}>
           Courses
@@ -53,7 +48,6 @@ export default function Header() {
           Contact
         </Link>
 
-        {/* Mobile CTA */}
         <Link
           href="/apply"
           className={`${styles.ctaButton} ${styles.mobileCta}`}
@@ -63,7 +57,6 @@ export default function Header() {
         </Link>
       </nav>
 
-      {/* Desktop CTA */}
       <div className={styles.desktopCta}>
         <Link href="/apply" className={styles.ctaButton}>
           Apply Now

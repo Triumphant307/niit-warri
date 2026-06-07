@@ -1,25 +1,20 @@
 :root {
-  /* Brand Colors - White & Blue Theme */
-  --color-primary-blue: hsl(217, 91%, 60%); /* Vibrant Blue */
+  --color-primary-blue: hsl(217, 91%, 60%);
   --color-primary-blue-hover: hsl(217, 91%, 50%);
   --color-primary-blue-light: hsl(217, 91%, 95%);
   --color-primary-blue-dark: hsl(217, 91%, 30%);
 
-  /* Neutral Colors */
   --color-white: #ffffff;
-  --color-background: #f8fafc; /* Very light slate-blue tint for softer contrast */
+  --color-background: #f8fafc;
   --color-surface: #ffffff;
 
-  /* Text Colors */
   --color-text-main: #0f172a;
   --color-text-muted: #64748b;
 
-  /* Shadows & Effects */
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --shadow-blue: 0 4px 14px 0 rgba(0, 118, 255, 0.39);
 
-  /* Transitions */
   --transition-fast: 150ms ease-in-out;
 }
 

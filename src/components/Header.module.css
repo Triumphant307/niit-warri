@@ -3,19 +3,14 @@
   justify-content: space-between;
   align-items: center;
   padding: 0.8rem 2rem;
-
-  /* Glassmorphism */
   background-color: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.5);
-
-  /* Pill Style */
   margin: 0 auto;
   width: 92%;
   max-width: 1200px;
   border-radius: 100px;
-
   color: var(--color-text-main);
   box-shadow: var(--shadow-md);
   position: fixed;
@@ -77,13 +72,12 @@
   display: none;
 }
 
-/* Hamburger Menu Base Styles */
 .hamburger {
   display: none;
   flex-direction: column;
   cursor: pointer;
   gap: 5px;
-  z-index: 101; /* Ensure it stays above the open mobile menu */
+  z-index: 101;
 }
 
 .bar {
@@ -94,7 +88,6 @@
   border-radius: 2px;
 }
 
-/* Hamburger Animations */
 .bar.open:nth-child(1) {
   transform: translateY(8px) rotate(45deg);
 }
@@ -107,7 +100,6 @@
   transform: translateY(-8px) rotate(-45deg);
 }
 
-/* Mobile Responsiveness */
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
@@ -139,8 +131,6 @@
     border-radius: 24px 0 0 24px;
     box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
     border-left: 1px solid rgba(255, 255, 255, 0.5);
-
-    /* Wardrobe / Slide-from-right effect */
     opacity: 0;
     transform: translateX(100%);
     pointer-events: none;
@@ -149,7 +139,6 @@
       opacity 0.4s ease;
   }
 
-  /* When menu is toggled open */
   .nav.navOpen {
     opacity: 1;
     transform: translateX(0);
@@ -157,7 +146,6 @@
   }
 }
 
-/* Fallback for legacy browsers that do not support backdrop-filter */
 @supports not (backdrop-filter: blur(12px)) {
   .header {
     background-color: rgba(255, 255, 255, 0.98);
