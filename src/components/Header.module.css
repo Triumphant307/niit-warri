@@ -2,12 +2,26 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 5%;
-  background-color: var(--color-surface);
+  padding: 0.8rem 2rem;
+
+  /* Glassmorphism */
+  background-color: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+
+  /* Pill Style */
+  margin: 0 auto;
+  width: 92%;
+  max-width: 1200px;
+  border-radius: 100px;
+
   color: var(--color-text-main);
-  box-shadow: var(--shadow-sm);
-  position: sticky;
-  top: 0;
+  box-shadow: var(--shadow-md);
+  position: fixed;
+  top: 1.5rem;
+  left: 0;
+  right: 0;
   z-index: 100;
 }
 
@@ -24,6 +38,7 @@
 .nav {
   display: flex;
   gap: 2rem;
+  align-items: center;
 }
 
 .navLink {
@@ -43,10 +58,116 @@
   padding: 0.6rem 1.2rem;
   border-radius: 4px;
   font-weight: bold;
-  transition: background-color var(--transition-fast), box-shadow var(--transition-fast);
+  transition:
+    background-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+  text-decoration: none;
 }
 
 .ctaButton:hover {
   background-color: var(--color-primary-blue-hover);
   box-shadow: var(--shadow-blue);
+}
+
+.desktopCta {
+  display: block;
+}
+
+.mobileCta {
+  display: none;
+}
+
+/* Hamburger Menu Base Styles */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  z-index: 101; /* Ensure it stays above the open mobile menu */
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: var(--color-primary-blue);
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+/* Hamburger Animations */
+.bar.open:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.bar.open:nth-child(2) {
+  opacity: 0;
+}
+
+.bar.open:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .desktopCta {
+    display: none;
+  }
+
+  .mobileCta {
+    display: inline-block;
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  .nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 280px;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    border-radius: 24px 0 0 24px;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+
+    /* Wardrobe / Slide-from-right effect */
+    opacity: 0;
+    transform: translateX(100%);
+    pointer-events: none;
+    transition:
+      transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+      opacity 0.4s ease;
+  }
+
+  /* When menu is toggled open */
+  .nav.navOpen {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+  }
+}
+
+/* Fallback for legacy browsers that do not support backdrop-filter */
+@supports not (backdrop-filter: blur(12px)) {
+  .header {
+    background-color: rgba(255, 255, 255, 0.98);
+  }
+}
+
+@supports not (backdrop-filter: blur(20px)) {
+  @media (max-width: 768px) {
+    .nav {
+      background-color: rgba(255, 255, 255, 0.98);
+    }
+  }
 }

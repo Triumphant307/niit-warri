@@ -1,7 +1,31 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import styles from "./Header.module.css";
 
 export default function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    // 1. Run the side-effect based on state
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = ""; // Revert to stylesheet default
+    }
+
+    // 2. The Cleanup Function
+    // This runs automatically if the component unmounts, ensuring the lock is ALWAYS released.
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
@@ -9,14 +33,38 @@ export default function Header() {
           NIIT<span>Warri</span>
         </Link>
       </div>
-      
-      <nav className={styles.nav}>
-        <Link href="/courses" className={styles.navLink}>Courses</Link>
-        <Link href="/about" className={styles.navLink}>About Us</Link>
-        <Link href="/contact" className={styles.navLink}>Contact</Link>
+
+      {/* Hamburger Icon */}
+      <div className={styles.hamburger} onClick={toggleMenu}>
+        <span className={`${styles.bar} ${isOpen ? styles.open : ""}`}></span>
+        <span className={`${styles.bar} ${isOpen ? styles.open : ""}`}></span>
+        <span className={`${styles.bar} ${isOpen ? styles.open : ""}`}></span>
+      </div>
+
+      {/* Navigation Links */}
+      <nav className={`${styles.nav} ${isOpen ? styles.navOpen : ""}`}>
+        <Link href="/courses" className={styles.navLink} onClick={toggleMenu}>
+          Courses
+        </Link>
+        <Link href="/about" className={styles.navLink} onClick={toggleMenu}>
+          About Us
+        </Link>
+        <Link href="/contact" className={styles.navLink} onClick={toggleMenu}>
+          Contact
+        </Link>
+
+        {/* Mobile CTA */}
+        <Link
+          href="/apply"
+          className={`${styles.ctaButton} ${styles.mobileCta}`}
+          onClick={toggleMenu}
+        >
+          Apply Now
+        </Link>
       </nav>
 
-      <div>
+      {/* Desktop CTA */}
+      <div className={styles.desktopCta}>
         <Link href="/apply" className={styles.ctaButton}>
           Apply Now
         </Link>
