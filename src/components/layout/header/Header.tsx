@@ -65,21 +65,21 @@ export default function Header() {
         <Link 
           href="#courses" 
           className={`${styles.navLink} ${activeSection === "courses" ? styles.active : ""}`} 
-          onClick={toggleMenu}
+          onClick={() => setIsOpen(false)}
         >
           Courses
         </Link>
         <Link 
           href="#about" 
           className={`${styles.navLink} ${activeSection === "about" ? styles.active : ""}`} 
-          onClick={toggleMenu}
+          onClick={() => setIsOpen(false)}
         >
           About Us
         </Link>
         <Link 
           href="#contact" 
           className={`${styles.navLink} ${activeSection === "contact" ? styles.active : ""}`} 
-          onClick={toggleMenu}
+          onClick={() => setIsOpen(false)}
         >
           Contact
         </Link>
