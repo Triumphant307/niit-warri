@@ -1,0 +1,116 @@
+.section {
+  width: 100%;
+  padding: 6rem 5%;
+  background-color: var(--color-background);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  color: var(--color-primary-blue-dark);
+  margin-bottom: 4rem;
+  text-align: center;
+  position: relative;
+  font-weight: 800;
+}
+
+.sectionTitle::after {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: var(--color-primary-blue);
+  border-radius: 4px;
+}
+
+.grid {
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.reviewCard {
+  padding: 2.5rem;
+  border-radius: 16px;
+  background-color: var(--color-surface);
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.reviewCard:hover {
+  transform: translateY(-5px);
+}
+
+.quoteIconWrapper {
+  margin-bottom: 1rem;
+  opacity: 0.3; /* Acts as a beautiful subtle watermark */
+}
+
+.quote {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+  font-style: italic;
+  margin-bottom: 2rem;
+  flex-grow: 1; /* Pushes the student info to the bottom evenly across all cards */
+}
+
+.studentInfo {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 1.5rem;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  background-color: var(--color-primary-blue-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+}
+
+.details h4 {
+  color: var(--color-primary-blue-dark);
+  font-size: 1.1rem;
+  margin-bottom: 0.2rem;
+}
+
+.details span {
+  font-size: 0.9rem;
+  color: var(--color-primary-blue);
+  font-weight: 600;
+}
