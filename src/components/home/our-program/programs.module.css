@@ -1,0 +1,85 @@
+.section {
+  width: 100%;
+  padding: 5rem 5%;
+  background-color: var(--color-background);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  color: var(--color-primary-blue-dark);
+  margin-bottom: 4rem;
+  text-align: center;
+  position: relative;
+  font-weight: 800;
+}
+
+.sectionTitle::after {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: var(--color-primary-blue);
+  border-radius: 4px;
+}
+
+.grid {
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* Restyled Card - Flat & Minimalist */
+.featureCard {
+  padding: 3rem 2.5rem;
+  border-radius: 12px;
+  background-color: var(--color-surface);
+  border: 1px solid #e2e8f0; /* Subtle border for clean minimalist look */
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05); /* Extremely subtle default shadow */
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); /* Smooth spring-like transition */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Restyled Hover - 3D Lift */
+.featureCard:hover {
+  transform: translateY(-12px); /* Significant lift */
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04); /* Expanding shadow */
+  border-color: var(--color-primary-blue); /* Strong brand color border highlight */
+}
+
+/* New Icon Container */
+.iconWrapper {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  background: var(--color-background);
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.03); /* Subtle inner depth */
+}
+
+.featureCard h3 {
+  color: var(--color-primary-blue-dark);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.featureCard p {
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}

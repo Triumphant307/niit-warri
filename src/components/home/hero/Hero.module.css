@@ -1,7 +1,8 @@
 .hero {
   width: 100%;
   padding: 9rem 5% 6rem 5%;
-  background-image: url("../../../assets/niit-warri-logo.png"),
+  background-image:
+    url("../../../assets/niit-warri-logo.png"),
     linear-gradient(135deg, var(--color-primary-blue-light) 0%, var(--color-background) 100%);
   background-size: cover, cover;
   background-position: center, center;
