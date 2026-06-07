@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import styles from "./Header.module.css";
+import Image from "next/image";
+import logoImg from "@/assets/understanding-web-development-frameworks-og-image.jpg";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,12 +12,15 @@ export default function Header() {
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden"; // Lock the <html> tag
     } else {
       document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
     }
 
     return () => {
       document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
     };
   }, [isOpen]);
 
@@ -26,8 +31,8 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
-        <Link href="/">
-          NIIT<span>Warri</span>
+        <Link href="/" style={{ display: "flex", alignItems: "center" }}>
+          <Image src={logoImg} alt="NIIT Warri Logo" height={50} priority />
         </Link>
       </div>
 

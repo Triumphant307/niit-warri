@@ -10,8 +10,8 @@ export default function Home() {
         <div className={styles.featureCard}>
           <h3>Software Engineering</h3>
           <p>
-            Master full-stack development, Java, Python, and modern web frameworks to become a highly
-            sought-after developer.
+            Master full-stack development, Java, Python, and modern web frameworks to become a
+            highly sought-after developer.
           </p>
         </div>
         <div className={styles.featureCard}>

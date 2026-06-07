@@ -6,9 +6,9 @@ export default function Hero() {
     <section className={styles.hero}>
       <h1>Shape Your Future with NIIT Warri</h1>
       <p>
-        Join the global leader in skills and talent development. We offer
-        industry-aligned training in Software Engineering, Data Science, and
-        Professional Certifications to accelerate your career.
+        Join the global leader in skills and talent development. We offer industry-aligned training
+        in Software Engineering, Data Science, and Professional Certifications to accelerate your
+        career.
       </p>
       <div className={styles.ctaGroup}>
         <Link href="/courses" className={styles.primaryBtn}>
