@@ -36,29 +36,26 @@
   gap: 2rem;
 }
 
-/* Restyled Card - Flat & Minimalist */
 .featureCard {
   padding: 3rem 2.5rem;
   border-radius: 12px;
   background-color: var(--color-surface);
-  border: 1px solid #e2e8f0; /* Subtle border for clean minimalist look */
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05); /* Extremely subtle default shadow */
-  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); /* Smooth spring-like transition */
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
-/* Restyled Hover - 3D Lift */
 .featureCard:hover {
-  transform: translateY(-12px); /* Significant lift */
+  transform: translateY(-12px);
   box-shadow:
     0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04); /* Expanding shadow */
-  border-color: var(--color-primary-blue); /* Strong brand color border highlight */
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border-color: var(--color-primary-blue);
 }
 
-/* New Icon Container */
 .iconWrapper {
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
@@ -69,7 +66,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 16px;
-  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.03); /* Subtle inner depth */
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.03);
 }
 
 .featureCard h3 {

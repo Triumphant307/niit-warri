@@ -12,7 +12,7 @@ export default function Header() {
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
-      document.documentElement.style.overflow = "hidden"; // Lock the <html> tag
+      document.documentElement.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "";
       document.documentElement.style.overflow = "";
