@@ -8,7 +8,7 @@
 .hero {
   width: 100%;
   padding: 6rem 5%;
-  background: linear-gradient(135deg, var(--primary-light) 0%, #ffffff 100%);
+  background: linear-gradient(135deg, var(--color-primary-blue-light) 0%, var(--color-background) 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,14 +17,14 @@
 
 .hero h1 {
   font-size: 3.5rem;
-  color: var(--primary-color);
+  color: var(--color-primary-blue-dark);
   margin-bottom: 1.5rem;
   line-height: 1.2;
 }
 
 .hero p {
   font-size: 1.2rem;
-  color: #555;
+  color: var(--color-text-muted);
   max-width: 800px;
   margin-bottom: 2.5rem;
   line-height: 1.6;
@@ -41,27 +41,29 @@
   font-size: 1.1rem;
   font-weight: 600;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: all var(--transition-fast);
 }
 
 .primaryBtn {
-  background-color: var(--accent-color);
-  color: white;
+  background-color: var(--color-primary-blue);
+  color: var(--color-white);
+  box-shadow: var(--shadow-sm);
 }
 
 .primaryBtn:hover {
-  background-color: var(--accent-hover);
+  background-color: var(--color-primary-blue-hover);
   transform: translateY(-2px);
+  box-shadow: var(--shadow-blue);
 }
 
 .secondaryBtn {
   background-color: transparent;
-  color: var(--primary-color);
-  border: 2px solid var(--primary-color);
+  color: var(--color-primary-blue);
+  border: 2px solid var(--color-primary-blue);
 }
 
 .secondaryBtn:hover {
-  background-color: var(--primary-light);
+  background-color: var(--color-primary-blue-light);
   transform: translateY(-2px);
 }
 
@@ -71,29 +73,30 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  background-color: var(--background);
+  background-color: var(--color-background);
 }
 
 .featureCard {
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-  background-color: white;
-  transition: transform 0.3s ease;
-  border-top: 4px solid var(--primary-color);
+  box-shadow: var(--shadow-md);
+  background-color: var(--color-surface);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  border-top: 4px solid var(--color-primary-blue);
 }
 
 .featureCard:hover {
   transform: translateY(-5px);
+  box-shadow: var(--shadow-blue);
 }
 
 .featureCard h3 {
-  color: var(--primary-color);
+  color: var(--color-primary-blue-dark);
   margin-bottom: 1rem;
   font-size: 1.5rem;
 }
 
 .featureCard p {
-  color: #666;
+  color: var(--color-text-muted);
   line-height: 1.5;
 }
