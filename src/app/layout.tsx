@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   description: "IT Training, Software Engineering, and Professional Certifications at NIIT Warri.",
 };
 
-import Header from "@/components/Header";
+import Header from "@/components/layout/header/Header";
 
 export default function RootLayout({
   children,
