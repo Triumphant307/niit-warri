@@ -83,21 +83,7 @@ export default function Header() {
         >
           Contact
         </Link>
-
-        <Link
-          href="/apply"
-          className={`${styles.ctaButton} ${styles.mobileCta}`}
-          onClick={toggleMenu}
-        >
-          Apply Now
-        </Link>
       </nav>
-
-      <div className={styles.desktopCta}>
-        <Link href="/apply" className={styles.ctaButton}>
-          Apply Now
-        </Link>
-      </div>
     </header>
   );
 }
