@@ -66,7 +66,7 @@ const PROGRAMS_DATA = [
 
 export default function Programs() {
   return (
-    <section className={styles.section}>
+    <section id="courses" className={styles.section}>
       <h2 className={styles.sectionTitle}>Our Programs</h2>
 
       <div className={styles.grid}>

@@ -47,7 +47,7 @@ const REASONS_DATA = [
 
 export default function WhyChooseUs() {
   return (
-    <section className={styles.section}>
+    <section id="about" className={styles.section}>
       <h2 className={styles.sectionTitle}>Why Choose NIIT Warri?</h2>
 
       <div className={styles.grid}>

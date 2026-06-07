@@ -43,13 +43,13 @@ export default function Header() {
       </div>
 
       <nav className={`${styles.nav} ${isOpen ? styles.navOpen : ""}`}>
-        <Link href="/courses" className={styles.navLink} onClick={toggleMenu}>
+        <Link href="#courses" className={styles.navLink} onClick={toggleMenu}>
           Courses
         </Link>
-        <Link href="/about" className={styles.navLink} onClick={toggleMenu}>
+        <Link href="#about" className={styles.navLink} onClick={toggleMenu}>
           About Us
         </Link>
-        <Link href="/contact" className={styles.navLink} onClick={toggleMenu}>
+        <Link href="#contact" className={styles.navLink} onClick={toggleMenu}>
           Contact
         </Link>
 
