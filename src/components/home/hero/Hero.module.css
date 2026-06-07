@@ -1,11 +1,13 @@
 .hero {
   width: 100%;
   padding: 9rem 5% 6rem 5%;
-  background: linear-gradient(
-    135deg,
-    var(--color-primary-blue-light) 0%,
-    var(--color-background) 100%
-  );
+  background-image: url("../../../assets/niit-warri-logo.png"),
+    linear-gradient(135deg, var(--color-primary-blue-light) 0%, var(--color-background) 100%);
+  background-size: cover, cover;
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
+  background-attachment: fixed, fixed; /* Parallax effect */
+  background-blend-mode: overlay; /* Softens the image against the gradient */
   display: flex;
   flex-direction: column;
   align-items: center;
