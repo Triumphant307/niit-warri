@@ -8,6 +8,25 @@ import logoImg from "@/assets/understanding-web-development-frameworks-og-image.
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: "-40% 0px -40% 0px" }
+    );
+
+    const sections = document.querySelectorAll("section[id], footer[id]");
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     if (isOpen) {
@@ -43,13 +62,25 @@ export default function Header() {
       </div>
 
       <nav className={`${styles.nav} ${isOpen ? styles.navOpen : ""}`}>
-        <Link href="#courses" className={styles.navLink} onClick={toggleMenu}>
+        <Link 
+          href="#courses" 
+          className={`${styles.navLink} ${activeSection === "courses" ? styles.active : ""}`} 
+          onClick={toggleMenu}
+        >
           Courses
         </Link>
-        <Link href="#about" className={styles.navLink} onClick={toggleMenu}>
+        <Link 
+          href="#about" 
+          className={`${styles.navLink} ${activeSection === "about" ? styles.active : ""}`} 
+          onClick={toggleMenu}
+        >
           About Us
         </Link>
-        <Link href="#contact" className={styles.navLink} onClick={toggleMenu}>
+        <Link 
+          href="#contact" 
+          className={`${styles.navLink} ${activeSection === "contact" ? styles.active : ""}`} 
+          onClick={toggleMenu}
+        >
           Contact
         </Link>
 
