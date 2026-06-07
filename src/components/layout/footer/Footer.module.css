@@ -1,0 +1,154 @@
+.footer {
+  width: 100%;
+  background-color: var(--color-primary-blue-dark);
+  color: var(--color-white);
+  padding-top: 5rem;
+  border-top: 4px solid var(--color-primary-blue);
+  margin-top: auto; /* Pushes footer to bottom if page content is short */
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+/* Tablet Layout */
+@media (min-width: 768px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop Layout - 4 columns with specific weighting */
+@media (min-width: 1024px) {
+  .container {
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 3rem;
+  }
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Logo wrapper to handle dark-text logos on dark backgrounds */
+.logo {
+  margin-bottom: 1.5rem;
+  background-color: var(--color-white);
+  display: inline-flex;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  width: fit-content;
+  box-shadow: var(--shadow-sm);
+}
+
+.description {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+.socials {
+  display: flex;
+  gap: 1rem;
+}
+
+.socialIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: var(--color-white);
+  transition: all 0.3s ease;
+}
+
+.socialIcon:hover {
+  background-color: var(--color-primary-blue);
+  border-color: var(--color-primary-blue);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.column h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-white);
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 0.8rem;
+}
+
+.column h3::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background-color: var(--color-primary-blue-light);
+  border-radius: 2px;
+}
+
+.linksList,
+.contactList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.linksList a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+  font-size: 0.95rem;
+  display: inline-block;
+}
+
+.linksList a:hover {
+  color: var(--color-white);
+  transform: translateX(5px); /* Nice interactive slide right */
+}
+
+.contactList li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.contactIcon {
+  color: var(--color-primary-blue-light);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.bottomBar {
+  width: 100%;
+  padding: 1.5rem 5%;
+  background-color: rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.bottomBar p {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+}
