@@ -33,7 +33,7 @@
 .nav {
   display: flex;
   flex: 1;
-  justify-content: center;
+  justify-content: flex-end;
   gap: 3rem; /* Slightly wider gap for premium feel */
   align-items: center;
 }
