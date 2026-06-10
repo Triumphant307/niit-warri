@@ -1,3 +1,6 @@
+"use client";
+
+import { useRef, useState } from "react";
 import styles from "./programs.module.css";
 import {
   Code2,
@@ -21,8 +24,7 @@ const PROGRAMS_DATA = [
     id: 2,
     icon: <Network size={36} color="var(--color-primary-blue)" strokeWidth={1.5} />,
     title: "Data & Emerging Tech",
-    description:
-      "Master Data Analytics, AI, and Machine Learning for modern business applications.",
+    description: "Master Data Analytics, AI, and Machine Learning for modern business applications.",
   },
   {
     id: 3,
@@ -52,31 +54,66 @@ const PROGRAMS_DATA = [
     id: 7,
     icon: <PenTool size={36} color="var(--color-primary-blue)" strokeWidth={1.5} />,
     title: "UI/UX Design",
-    description:
-      "Design intuitive, beautiful user experiences using industry-standard tools like Figma.",
+    description: "Design intuitive, beautiful user experiences using industry-standard tools like Figma.",
   },
   {
     id: 8,
     icon: <TrendingUp size={36} color="var(--color-primary-blue)" strokeWidth={1.5} />,
     title: "Digital Marketing",
-    description:
-      "Master SEO, social media strategy, and data-driven marketing to drive business growth.",
+    description: "Master SEO, social media strategy, and data-driven marketing to drive business growth.",
   },
 ];
 
 export default function Programs() {
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  const handleSelect = (index: number) => {
+    setActiveIndex(index);
+
+    cardRefs.current[index]?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
   return (
     <section id="courses" className={styles.section}>
       <h2 className={styles.sectionTitle}>Our Programs</h2>
 
-      <div className={styles.grid}>
-        {PROGRAMS_DATA.map((program) => (
-          <div key={program.id} className={styles.featureCard}>
-            <div className={styles.iconWrapper}>{program.icon}</div>
-            <h3>{program.title}</h3>
-            <p>{program.description}</p>
-          </div>
-        ))}
+      <div className={styles.layout}>
+        {/* SIDEBAR */}
+        <aside className={styles.sidebar}>
+          {PROGRAMS_DATA.map((program, index) => (
+            <button
+              key={program.id}
+              className={`${styles.menuItem} ${
+                activeIndex === index ? styles.activeMenuItem : ""
+              }`}
+              onClick={() => handleSelect(index)}
+            >
+              {program.title}
+            </button>
+          ))}
+        </aside>
+
+        {/* CARDS */}
+        <div className={styles.grid}>
+          {PROGRAMS_DATA.map((program, index) => (
+            <div
+              key={program.id}
+              ref={(el) => {cardRefs.current[index] = el;}}
+              className={`${styles.featureCard} ${
+                activeIndex === index ? styles.activeCard : ""
+              }`}
+            >
+              <div className={styles.iconWrapper}>{program.icon}</div>
+
+              <h3>{program.title}</h3>
+              <p>{program.description}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
